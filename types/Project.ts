@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { ProjectImage } from "./ProjectImage";
 
 export interface Project {

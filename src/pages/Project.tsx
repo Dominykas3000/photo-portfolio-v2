@@ -1,9 +1,9 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Project } from "../../types/Project";
 import ImageSlider from "../components/ImageSlider";
 import { ProjectPageSkeleton } from "../components/skeleton/ProjectPageSkeleton";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 
 const getItemById = async (id: number) => {
   const reqOptions = {
