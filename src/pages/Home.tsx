@@ -29,10 +29,13 @@ const Home: React.FC = () => {
 
       try {
         const response = await axios.get(
-          "http://127.0.0.1:1337/api/projects?fields[0]=project_name&fields[1]=project_date&populate=project_thumbnail",
+          `${
+            import.meta.env.VITE_STRAPI_URL
+          }/api/projects?fields[0]=project_name&fields[1]=project_date&populate=project_thumbnail`,
           reqOptions,
         );
         const data = response.data;
+        console.log(data);
         if (data && data.data) {
           setProjects(data.data);
         } else {
@@ -62,7 +65,7 @@ const Home: React.FC = () => {
                 project_name={project.attributes.project_name}
                 project_date={project.attributes.project_date}
                 project_thumbnail={
-                  "http://127.0.0.1:1337" +
+                  `${import.meta.env.VITE_STRAPI_URL}` +
                   project.attributes.project_thumbnail.data.attributes.formats
                     .small.url
                 }

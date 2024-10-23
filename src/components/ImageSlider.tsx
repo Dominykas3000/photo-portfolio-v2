@@ -54,9 +54,9 @@ const ImageSlider = ({ images }: ImageSliderProps) => {
               className="m-auto w-auto h-auto max-h-[70dvh] max-w-lg"
               src={
                 image.attributes.formats.medium
-                  ? "http://127.0.0.1:1337" +
+                  ? `${import.meta.env.VITE_STRAPI_URL}` +
                     image.attributes.formats.medium.url
-                  : "http://127.0.0.1:1337" + image.attributes.url
+                  : `${import.meta.env.VITE_STRAPI_URL}` + image.attributes.url
               }
               alt={image.attributes.name}
             />

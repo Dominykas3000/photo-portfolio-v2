@@ -14,7 +14,7 @@ const getItemById = async (id: number) => {
 
   try {
     const request = await axios.get(
-      `http://127.0.0.1:1337/api/projects/${id}?populate=*`,
+      `${import.meta.env.VITE_STRAPI_URL}/api/projects/${id}?populate=*`,
       reqOptions,
     );
     const data = request.data;
