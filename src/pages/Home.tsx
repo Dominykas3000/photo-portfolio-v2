@@ -35,7 +35,6 @@ const Home: React.FC = () => {
           reqOptions,
         );
         const data = response.data;
-        console.log(data);
         if (data && data.data) {
           setProjects(data.data);
         } else {
