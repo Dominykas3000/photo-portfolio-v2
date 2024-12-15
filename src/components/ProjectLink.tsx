@@ -15,20 +15,20 @@ const ProjectLink = (props: ProjectLinkProps) => {
   return (
     <div className="project-card relative p-4 w-auto group">
       <Link to={`project-page/${id}`} className="hover:underline">
-        <div className="relative flex flex-row gap-1 justify-start items-baseline  h-[18px]">
-          <h2 className="text-sm font-light text-gray-400 tracking-[0.4rem]">
+        <div className="relative flex flex-row gap-1 justify-start items-baseline h-[18px]">
+          <h2 className="hidden md:inline text-sm font-light text-gray-400 tracking-[0.4rem]">
             {"[" + paddedId + "]"}
           </h2>
-          <h2 className="text-lg font-light tracking-[0.2rem]">
+          <h2 className="text-sm md:text-lg font-light tracking-[0.2rem]">
             {project_name}
           </h2>
-          <p className="text-sm text-gray-400 tracking-[0.2rem]">
+          <p className="text-xs md:text-sm text-gray-400 tracking-[0.2rem]">
             {dateWithoutDay}
           </p>
         </div>
       </Link>
       <img
-        className="fixed z-10 top-1/2 left-1/2 w-full max-w-lg h-auto transform -translate-x-1/2 -translate-y-1/2 hidden opacity-0  duration-300 group-hover:opacity-100 max-h-[70dvh]  transition-all group-hover:block"
+        className="fixed z-10 top-1/2 left-1/2 w-full max-w-lg h-auto transform -translate-x-1/2 -translate-y-1/2 hidden md:group-hover:block md:group-hover:opacity-100 max-h-[70dvh] transition-all duration-300"
         src={project_thumbnail}
         alt={project_name}
       />

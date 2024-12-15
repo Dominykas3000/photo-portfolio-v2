@@ -47,11 +47,11 @@ const ImageSlider = ({ images }: ImageSliderProps) => {
 
   return (
     <section className="w-3/4">
-      <Slider {...settings}>
+      <Slider className="" {...settings}>
         {images.map((image) => (
-          <div key={image.id} className="flex justify-center">
+          <div key={image.id} className="h-auto w-auto flex justify-center">
             <img
-              className="m-auto w-auto h-auto max-h-[70dvh] max-w-lg"
+              className="m-auto w-auto h-auto max-h-80 md:max-h-[65dvh]"
               src={
                 image.attributes.formats.medium
                   ? `${import.meta.env.VITE_STRAPI_URL}` +

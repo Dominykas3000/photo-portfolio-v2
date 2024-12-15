@@ -51,7 +51,7 @@ const ProjectPage = () => {
     <>
       <section>
         <article className="flex gap-4 justify-center items-center flex-col mt-4 mb-8">
-          <h1 className="text-3xl font-light tracking-[0.4rem]">
+          <h1 className="text-2xl font-medium md:text-3xl  tracking-[0.2rem]">
             {project.attributes.project_name}
           </h1>
           <div className="flex flex-col gap-2 items-center">
@@ -65,8 +65,8 @@ const ProjectPage = () => {
           <ImageSlider images={project.attributes.project_images.data} />
         </div>
 
-        <article className="w-full flex items-center justify-center mb-20">
-          <p className="text-balance text-md w-3/4 tracking-[0.05rem] text-center">
+        <article className="mx-auto flex items-center w-3/4 justify-center mt-8 mb-20">
+          <p className=" text-sm md:text-md  tracking-[0.05rem] text-left">
             {project.attributes.project_description}
           </p>
         </article>

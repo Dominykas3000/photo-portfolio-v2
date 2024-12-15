@@ -24,8 +24,71 @@ body {
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
+#root{
+    padding: 2rem;
+}
+
+@media screen and (max-width:768px) {
+  #root {
+    padding: 0.75rem  ;
+  }
+  
+}
+
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+
+.animate {
+  animation: tada 1s ease-in-out;
+}
+
+@keyframes tada {
+  0% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  20% {
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  30% {
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  40% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  60% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  70% {
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  80% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  90% {
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
   }
 }
