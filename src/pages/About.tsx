@@ -2,7 +2,7 @@ const About = () => {
   return (
     <section className="pb-4 flex md:flex-row gap-8 flex-col">
       <div className="m-auto max-w-52 md:max-w-lg animate-tada">
-        <img src="/src/assets/IMG_4632.jpeg" alt="benita" />
+        <img src="/public/IMG_4632.jpeg" alt="benita" />
       </div>
 
       <article className="mx-5 md:mx-0 flex flex-col justify-center">
