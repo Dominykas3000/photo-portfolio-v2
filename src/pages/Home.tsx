@@ -20,6 +20,7 @@ const Home: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
+    
     const fetchProjects = async () => {
       const reqOptions = {
         headers: {
@@ -57,10 +58,11 @@ const Home: React.FC = () => {
           ? Array.from({ length: 10 }).map((_, index) => (
               <ProjectLinkSkeleton key={index} />
             ))
-          : projects.map((project) => (
+          : projects.map((project, index: number) => (
               <ProjectLink
                 id={project.id}
                 key={project.id}
+                project_index={index}
                 project_name={project.attributes.project_name}
                 project_date={project.attributes.project_date}
                 project_thumbnail={

@@ -1,68 +1,42 @@
 import { ProjectImage } from "../../types/ProjectImage";
-import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 interface ImageSliderProps {
   images: ProjectImage[];
 }
 
 const ImageSlider = ({ images }: ImageSliderProps) => {
-  // function SampleNextArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return (
-  //     <div
-  //       className={className}
-  //       style={{ ...style, display: "block", background: "red" }}
-  //       onClick={onClick}
-  //     />
-  //   );
-  // }
-
-  // function SamplePrevArrow(props) {
-  //   const { className, style, onClick } = props;
-  //   return (
-  //     <div
-  //       className={className}
-  //       style={{ ...style, display: "block", background: "green" }}
-  //       onClick={onClick}
-  //     />
-  //   );
-  // }
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    fade: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    // adaptiveHeight: true,
-    cssEase: "ease-out",
-    // autoplay: true,
-    // autoplaySpeed: 3000,
-    // nextArrow: <SampleNextArrow  />,
-    // prevArrow: <SamplePrevArrow />,
-  };
-
   return (
-    <section className="w-3/4">
-      <Slider className="" {...settings}>
-        {images.map((image) => (
-          <div key={image.id} className="h-auto w-auto flex justify-center">
-            <img
-              className="m-auto w-auto h-auto max-h-80 md:max-h-[65dvh]"
-              src={
-                image.attributes.formats.medium
-                  ? `${import.meta.env.VITE_STRAPI_URL}` +
-                    image.attributes.formats.medium.url
-                  : `${import.meta.env.VITE_STRAPI_URL}` + image.attributes.url
-              }
-              alt={image.attributes.name}
-            />
-          </div>
+    <section className="w-full md:w-3/4">
+      <Swiper
+        cssMode={true}
+        navigation={true}
+        pagination={true}
+        mousewheel={true}
+        keyboard={true}
+        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        className="mySwiper"
+      >
+        {images.map((image, index: number) => (
+          <SwiperSlide key={index}>
+              <img
+                className="m-auto w-auto h-auto max-h-80 md:max-h-[65dvh]"
+                src={
+                  image.attributes.formats.medium
+                    ? `${import.meta.env.VITE_STRAPI_URL}` +
+                      image.attributes.formats.medium.url
+                    : `${import.meta.env.VITE_STRAPI_URL}` +
+                      image.attributes.url
+                }
+                alt={image.attributes.name}
+              />
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
     </section>
   );
 };
